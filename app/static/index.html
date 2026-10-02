@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agent IA — Factures fournisseurs</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="logo" aria-hidden="true">◆</span>
+    <div>
+      <h1>Agent IA de saisie de factures fournisseurs</h1>
+      <p class="subtitle">Dynamics 365 Business Central · extraction LLM · contrôles · validation humaine</p>
+    </div>
+  </div>
+  <div class="badges" id="badges"></div>
+</header>
+
+<main class="layout">
+  <aside class="sidebar">
+    <section class="card">
+      <h2>1. Déposer une facture</h2>
+      <label class="dropzone" id="dropzone">
+        <input type="file" id="fileInput" accept="application/pdf" hidden>
+        <strong>Glisser un PDF ici</strong>
+        <span>ou cliquer pour parcourir</span>
+      </label>
+      <h3>Factures de démonstration</h3>
+      <div id="samples" class="samples"></div>
+      <button class="link" id="resetBtn" title="Restaure les données CRONUS d'origine">Réinitialiser la démo</button>
+    </section>
+    <section class="card">
+      <h2>Historique</h2>
+      <ul id="history" class="history"><li class="muted">Aucun traitement.</li></ul>
+    </section>
+  </aside>
+
+  <section class="content" id="content">
+    <div class="empty card">
+      <h2>Comment ça marche</h2>
+      <ol>
+        <li>Le LLM lit la facture PDF et extrait fournisseur, dates, lignes et totaux.</li>
+        <li>L'agent appelle des outils ERP : fournisseur, doublon, bon de commande, rapprochement.</li>
+        <li>Il crée une facture d'achat <strong>en brouillon</strong> dans Business Central.</li>
+        <li>Vous validez ou rejetez : <strong>aucune écriture n'est comptabilisée sans humain</strong>.</li>
+      </ol>
+      <p class="gain">Saisie manuelle ≈ 5 min / facture → contrôle et validation ≈ 30 s.</p>
+    </div>
+  </section>
+</main>
+
+<template id="jobTemplate">
+  <div class="job">
+    <div class="job-head card">
+      <div>
+        <div class="job-title"></div>
+        <div class="job-meta muted"></div>
+      </div>
+      <span class="status"></span>
+    </div>
+
+    <div class="decision card" hidden>
+      <div class="decision-text">
+        <div class="recommendation"></div>
+        <p class="summary"></p>
+      </div>
+      <div class="decision-actions">
+        <input type="text" class="comment" placeholder="Commentaire (optionnel)" maxlength="300">
+        <button class="btn danger rejectBtn">Rejeter</button>
+        <button class="btn primary validateBtn">Valider</button>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="col">
+        <section class="card">
+          <h2>Anomalies</h2>
+          <div class="anomalies"></div>
+        </section>
+        <section class="card">
+          <h2>Données extraites</h2>
+          <div class="extracted muted">En cours d'extraction…</div>
+        </section>
+        <section class="card erp">
+          <h2>Correspondances ERP</h2>
+          <div class="erp-data muted">—</div>
+        </section>
+      </div>
+      <div class="col">
+        <section class="card">
+          <h2>Raisonnement de l'agent</h2>
+          <ol class="timeline"></ol>
+        </section>
+        <section class="card">
+          <h2>Document</h2>
+          <iframe class="pdf" title="Aperçu de la facture"></iframe>
+        </section>
+      </div>
+    </div>
+  </div>
+</template>
+
+<div id="toast" class="toast" role="status" hidden></div>
+<script src="/static/app.js"></script>
+</body>
+</html>

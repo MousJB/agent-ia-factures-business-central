@@ -1,0 +1,45 @@
+[
+  {
+    "id": "po-106001", "number": "106001", "vendor_number": "10000", "vendor_name": "Fabrikam, Inc.",
+    "order_date": "2026-09-08", "status": "Released",
+    "lines": [
+      {"item_number": "1896-S", "description": "ATHENS Desk", "quantity": 4, "unit_cost": 649.40, "line_type": "Item"},
+      {"item_number": "1900-S", "description": "PARIS Guest Chair, black", "quantity": 8, "unit_cost": 125.10, "line_type": "Item"}
+    ],
+    "total_excl_tax": 3598.40, "total_incl_tax": 4318.08
+  },
+  {
+    "id": "po-106002", "number": "106002", "vendor_number": "40000", "vendor_name": "Wide World Importers",
+    "order_date": "2026-09-10", "status": "Released",
+    "lines": [
+      {"item_number": "1908-S", "description": "LONDON Swivel Chair, blue", "quantity": 10, "unit_cost": 123.30, "line_type": "Item"},
+      {"item_number": "1928-S", "description": "AMSTERDAM Lamp", "quantity": 5, "unit_cost": 35.60, "line_type": "Item"}
+    ],
+    "total_excl_tax": 1411.00, "total_incl_tax": 1693.20
+  },
+  {
+    "id": "po-106003", "number": "106003", "vendor_number": "20000", "vendor_name": "First Up Consultants",
+    "order_date": "2026-08-25", "status": "Released",
+    "lines": [
+      {"item_number": "622600", "description": "Conseil migration ERP (jour-homme)", "quantity": 3, "unit_cost": 950.00, "line_type": "Account"}
+    ],
+    "total_excl_tax": 2850.00, "total_incl_tax": 3420.00
+  },
+  {
+    "id": "po-106004", "number": "106004", "vendor_number": "30000", "vendor_name": "Graphic Design Institute",
+    "order_date": "2026-09-01", "status": "Released",
+    "lines": [
+      {"item_number": "623100", "description": "Refonte charte graphique", "quantity": 1, "unit_cost": 1800.00, "line_type": "Account"},
+      {"item_number": "623100", "description": "Maquettes catalogue produits", "quantity": 2, "unit_cost": 450.00, "line_type": "Account"}
+    ],
+    "total_excl_tax": 2700.00, "total_incl_tax": 3240.00
+  },
+  {
+    "id": "po-106005", "number": "106005", "vendor_number": "50000", "vendor_name": "Nod Publishers",
+    "order_date": "2026-09-12", "status": "Released",
+    "lines": [
+      {"item_number": "1996-S", "description": "ATLANTA Whiteboard, base", "quantity": 6, "unit_cost": 1397.30, "line_type": "Item"}
+    ],
+    "total_excl_tax": 8383.80, "total_incl_tax": 10060.56
+  }
+]

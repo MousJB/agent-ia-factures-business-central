@@ -1,0 +1,7 @@
+[
+  {"id": "v-10000", "number": "10000", "name": "Fabrikam, Inc.", "vat_number": "FR40123456789", "city": "Paris", "currency": "EUR", "blocked": false},
+  {"id": "v-20000", "number": "20000", "name": "First Up Consultants", "vat_number": "FR61234567890", "city": "Lyon", "currency": "EUR", "blocked": false},
+  {"id": "v-30000", "number": "30000", "name": "Graphic Design Institute", "vat_number": "FR72345678901", "city": "Nantes", "currency": "EUR", "blocked": false},
+  {"id": "v-40000", "number": "40000", "name": "Wide World Importers", "vat_number": "FR83456789012", "city": "Marseille", "currency": "EUR", "blocked": false},
+  {"id": "v-50000", "number": "50000", "name": "Nod Publishers", "vat_number": "FR94567890123", "city": "Lille", "currency": "EUR", "blocked": false}
+]
